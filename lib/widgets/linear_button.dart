@@ -22,7 +22,7 @@ class LinearButton extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           children: [
             Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 5),
               child: Text(
                 buttonText,
                 style: Theme.of(context)

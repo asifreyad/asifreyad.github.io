@@ -5,12 +5,18 @@ Widget logo() {
     children: const [
       Text(
         '.asif',
-        style: TextStyle(color: Colors.black),
+        style: TextStyle(
+          color: Colors.black,
+          fontSize: 22,
+        ),
       ),
       Text(
         'Reyad',
         style: TextStyle(
-            color: Colors.deepPurpleAccent, fontWeight: FontWeight.bold),
+          color: Colors.deepPurpleAccent,
+          fontWeight: FontWeight.bold,
+          fontSize: 22,
+        ),
       ),
     ],
   );
