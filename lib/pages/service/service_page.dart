@@ -13,7 +13,10 @@ class ServicePage extends StatelessWidget {
       constraints: const BoxConstraints(minHeight: 500),
       // color: Colors.white,
       padding: EdgeInsets.symmetric(
-          vertical: 40, horizontal: MediaQuery.of(context).size.width * .1),
+          vertical: 40,
+          horizontal: Responsive.isMobile(context)
+              ? MediaQuery.of(context).size.width * .01
+              : MediaQuery.of(context).size.width * .1),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -26,9 +29,7 @@ class ServicePage extends StatelessWidget {
               mainAxisSpacing: 8,
               crossAxisSpacing: 16,
               childAspectRatio: 1,
-              padding: Responsive.isMobile(context)
-                  ? const EdgeInsets.all(8)
-                  : const EdgeInsets.all(16),
+              padding: const EdgeInsets.all(16),
               physics: const NeverScrollableScrollPhysics(),
               children: [
                 //
@@ -60,8 +61,12 @@ class ServicePage extends StatelessWidget {
   }
 
   // service card
-  Widget serviceCard(context,
-      {required String title, required String iconName, required List list}) {
+  Widget serviceCard(
+    context, {
+    required String title,
+    required String iconName,
+    required List list,
+  }) {
     return Card(
       elevation: Responsive.isMobile(context) ? 6 : 8,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
@@ -72,7 +77,7 @@ class ServicePage extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             const SizedBox(height: 40),
-            svgIcon(iconName: iconName, height: 48, width: 48),
+            svgIcon(iconName: iconName, height: 64, width: 64),
             Text(
               title,
               style: Theme.of(context)
@@ -126,21 +131,22 @@ class ServicePage extends StatelessWidget {
                           ),
                         ));
               },
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  Text(
-                    'View More',
-                    style: TextStyle(color: Colors.deepPurpleAccent.shade200),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.symmetric(horizontal: 4),
-                    child: Icon(
+              child: Padding(
+                padding: const EdgeInsets.all(8),
+                child: Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text(
+                      'View More',
+                      style: TextStyle(color: Colors.deepPurpleAccent.shade200),
+                    ),
+                    const SizedBox(width: 4),
+                    Icon(
                       Icons.arrow_right_alt_outlined,
                       color: Colors.deepPurpleAccent.shade200,
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               ),
             ),
           ],

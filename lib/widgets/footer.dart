@@ -6,8 +6,10 @@ import '../responsive.dart';
 import 'logo.dart';
 
 class Footer extends StatelessWidget {
+  final GlobalKey itemKeyHome;
   const Footer({
     Key? key,
+    required this.itemKeyHome,
   }) : super(key: key);
 
   @override
@@ -34,8 +36,17 @@ class Footer extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // icon
-                          logo(),
+                          //logo
+                          GestureDetector(
+                              onTap: () async {
+                                final context = itemKeyHome.currentContext;
+
+                                await Scrollable.ensureVisible(context!,
+                                    duration: const Duration(seconds: 1));
+                              },
+                              child: const Logo()),
+
+                          //
                           Text(
                             'App Developer',
                             style: Theme.of(context)
@@ -97,6 +108,8 @@ class Footer extends StatelessWidget {
                     ],
                   ),
                 )
+
+              //desktop view
               : Padding(
                   padding: const EdgeInsets.only(top: 32),
                   child: Row(
@@ -107,8 +120,16 @@ class Footer extends StatelessWidget {
                       Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
-                          // icon
-                          logo(),
+                          //logo
+                          GestureDetector(
+                              onTap: () async {
+                                final context = itemKeyHome.currentContext;
+
+                                await Scrollable.ensureVisible(context!,
+                                    duration: const Duration(seconds: 1));
+                              },
+                              child: const Logo()),
+
                           Text(
                             'App Developer',
                             style: Theme.of(context).textTheme.subtitle2,
@@ -173,6 +194,8 @@ class Footer extends StatelessWidget {
                     ],
                   ),
                 ),
+
+          //copy right
           const Text('© asifreyad.github.io | All right reserved')
         ],
       ),

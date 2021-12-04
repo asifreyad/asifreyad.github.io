@@ -3,7 +3,7 @@ import 'package:portfolio/widgets/linear_button.dart';
 import 'package:portfolio/widgets/social_media_button.dart';
 
 import '/constant.dart';
-import '../../responsive.dart';
+import '/responsive.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -121,7 +121,9 @@ class HomePageM extends StatelessWidget {
                         iconName: 'facebook.svg', type: '', data: kDevFacebook),
                     const SizedBox(height: 16),
                     socialMediaButton(
-                        iconName: 'email.svg', type: 'mailto', data: kDevEmail),
+                        iconName: 'email.svg',
+                        type: 'mailto:',
+                        data: kDevEmail),
                   ],
                 ),
               ),
