@@ -1,7 +1,4 @@
-// dashboard
-
 import 'package:flutter/material.dart';
-import 'package:portfolio/pages/service/service_page.dart';
 import 'package:portfolio/responsive/responsive.dart';
 import 'package:portfolio/widgets/bottom_nav.dart';
 import 'package:portfolio/widgets/footer.dart';
@@ -25,73 +22,6 @@ class _DashboardPageState extends State<DashboardPage> {
   final itemKeyAbout = GlobalKey();
   final itemKeySkills = GlobalKey();
   final itemKeyServices = GlobalKey();
-
-  final itemKeyHomeM = GlobalKey();
-  final itemKeyAboutM = GlobalKey();
-
-  // @override
-  // Widget build(BuildContext context) {
-  //   return Scaffold(
-  //     //
-  //     body: Column(
-  //       children: [
-  //         //top nav
-  //         if (Responsive.isDesktop(context))
-  //           TopNav(
-  //             itemKeyHome: itemKeyHome,
-  //             itemKeyAbout: itemKeyAbout,
-  //             itemKeySkills: itemKeySkills,
-  //             itemKeyServices: itemKeyServices,
-  //           ),
-  //
-  //         //body
-  //         Expanded(
-  //           child: SingleChildScrollView(
-  //             child: SafeArea(
-  //               child: Column(
-  //                 children: [
-  //                   // home page
-  //                   if (Responsive.isDesktop(context))
-  //                     Container(key: itemKeyHome, child: const HomePage()),
-  //                   if (Responsive.isTablet(context)) const HomePage(),
-  //                   if (Responsive.isMobile(context))
-  //                     Container(key: itemKeyHomeM, child: const HomePageM()),
-  //
-  //                   // about
-  //                   if (Responsive.isDesktop(context))
-  //                     Container(key: itemKeyAbout, child: const AboutMePage()),
-  //                   if (Responsive.isMobile(context))
-  //                     Container(
-  //                         key: itemKeyAboutM, child: const AboutMePageM()),
-  //
-  //                   //skills
-  //                   Container(key: itemKeySkills, child: const SkillsPage()),
-  //
-  //                   //services
-  //                   Container(key: itemKeyServices, child: const ServicePage()),
-  //
-  //                   //footer
-  //                   Footer(itemKeyHome: itemKeyHome),
-  //
-  //                   //skills
-  //                 ],
-  //               ),
-  //             ),
-  //           ),
-  //         ),
-  //
-  //         // bottom nav
-  //         if (Responsive.isMobile(context))
-  //           BottomNav(
-  //             itemKeyHome: itemKeyHome,
-  //             itemKeyAbout: itemKeyAboutM,
-  //             itemKeySkills: itemKeySkills,
-  //             itemKeyServices: itemKeyServices,
-  //           ),
-  //       ],
-  //     ),
-  //   );
-  // }
 
   @override
   Widget build(BuildContext context) {
@@ -123,6 +53,7 @@ class _DashboardPageState extends State<DashboardPage> {
                 children: [
                   //home
                   Container(
+                    key: itemKeyHome,
                     constraints: const BoxConstraints(minHeight: 500),
                     color: Colors.white,
                     padding: EdgeInsets.symmetric(
@@ -272,6 +203,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
                   //about
                   Container(
+                    key: itemKeyAbout,
                     constraints: const BoxConstraints(minHeight: 500),
                     // color: Colors.white,
                     padding: EdgeInsets.symmetric(
@@ -449,6 +381,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
                   // skills
                   Container(
+                    key: itemKeySkills,
                     constraints: const BoxConstraints(minHeight: 500),
                     color: Colors.white,
                     padding: EdgeInsets.symmetric(
@@ -678,6 +611,7 @@ class _DashboardPageState extends State<DashboardPage> {
 
                   // services
                   Container(
+                    key: itemKeyServices,
                     width: width,
                     constraints: const BoxConstraints(minHeight: 600),
                     // color: Colors.red,
@@ -705,7 +639,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 context,
                                 title: 'UI/Ux\nDesigner',
                                 iconName: 'object.svg',
-                                list: uiList,
+                                list: [],
                               ),
                             ),
 
@@ -716,7 +650,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 context,
                                 title: 'App\nDeveloper',
                                 iconName: 'mobile.svg',
-                                list: appList,
+                                list: [],
                               ),
                             ),
 
@@ -727,7 +661,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 context,
                                 title: 'Frontend\nDeveloper',
                                 iconName: 'curly.svg',
-                                list: frontendList,
+                                list: [],
                               ),
                             ),
                           ]),
@@ -742,7 +676,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 context,
                                 title: 'UI/Ux\nDesigner',
                                 iconName: 'object.svg',
-                                list: uiList,
+                                list: [],
                               ),
                             ),
 
@@ -754,7 +688,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 context,
                                 title: 'App\nDeveloper',
                                 iconName: 'mobile.svg',
-                                list: appList,
+                                list: [],
                               ),
                             ),
 
@@ -766,7 +700,7 @@ class _DashboardPageState extends State<DashboardPage> {
                                 context,
                                 title: 'Frontend\nDeveloper',
                                 iconName: 'curly.svg',
-                                list: frontendList,
+                                list: [],
                               ),
                             ),
                           ]),
