@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/responsive.dart';
+import 'package:portfolio/responsive/responsive.dart';
 import 'package:portfolio/widgets/svg_icon.dart';
 
 import '/widgets/headline.dart';

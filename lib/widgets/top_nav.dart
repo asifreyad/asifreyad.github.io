@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/logo.dart';
 
-import 'bottom_nav.dart';
+import 'button_nav.dart';
 
 class TopNav extends StatelessWidget {
   final GlobalKey itemKeyHome;
@@ -22,7 +22,7 @@ class TopNav extends StatelessWidget {
     return Container(
       color: Colors.white,
       padding: EdgeInsets.symmetric(
-          vertical: 12, horizontal: MediaQuery.of(context).size.width * .1),
+          horizontal: MediaQuery.of(context).size.width * .1),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [

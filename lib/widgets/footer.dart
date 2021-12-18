@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:portfolio/widgets/social_media_button.dart';
 
 import '../constant.dart';
-import '../responsive.dart';
+import '../responsive/responsive.dart';
 import 'logo.dart';
 
 class Footer extends StatelessWidget {
@@ -15,8 +15,7 @@ class Footer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      constraints:
-          BoxConstraints(minHeight: Responsive.isMobile(context) ? 300 : 220),
+      constraints: const BoxConstraints(minHeight: 220),
       color: Colors.black26,
       padding: EdgeInsets.symmetric(
         vertical: 20,
@@ -25,11 +24,11 @@ class Footer extends StatelessWidget {
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Responsive.isMobile(context)
+          Responsive.isMobile(context) || Responsive.isTablet(context)
               ? Container(
                   constraints: const BoxConstraints(minHeight: 200),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       //logo
@@ -57,54 +56,73 @@ class Footer extends StatelessWidget {
                         ],
                       ),
 
-                      // const SizedBox(height: 16),
+                      const SizedBox(height: 16),
 
                       //menu
-                      Column(
-                        mainAxisAlignment: MainAxisAlignment.start,
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: const [
-                          Text(
-                            'About',
-                            style: TextStyle(color: Colors.black87),
+                      Row(
+                        crossAxisAlignment: CrossAxisAlignment.end,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Column(
+                            mainAxisAlignment: MainAxisAlignment.start,
+                            mainAxisSize: MainAxisSize.min,
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              InkWell(
+                                onTap: () {},
+                                child: const Text(
+                                  'About',
+                                  textAlign: TextAlign.left,
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: const Text(
+                                  'Skills',
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: const Text(
+                                  'Services',
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                              ),
+                              InkWell(
+                                onTap: () {},
+                                child: const Text(
+                                  'Portfolio',
+                                  style: TextStyle(color: Colors.black87),
+                                ),
+                              ),
+                            ],
                           ),
-                          Text(
-                            'Skills',
-                            style: TextStyle(color: Colors.black87),
-                          ),
-                          Text(
-                            'Services',
-                            style: TextStyle(color: Colors.black87),
-                          ),
-                          Text(
-                            'Portfolio',
-                            style: TextStyle(color: Colors.black87),
+
+                          //icon
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            mainAxisSize: MainAxisSize.min,
+                            children: [
+                              socialMediaButton(
+                                  iconName: 'linkedin.svg',
+                                  type: '',
+                                  data: kDevLinkedin),
+                              socialMediaButton(
+                                  iconName: 'facebook.svg',
+                                  type: '',
+                                  data: kDevFacebook),
+                              socialMediaButton(
+                                  iconName: 'email.svg',
+                                  type: 'mailto:',
+                                  data: kDevEmail),
+                            ],
                           ),
                         ],
                       ),
 
                       // const SizedBox(height: 16),
-
-                      //icon
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          socialMediaButton(
-                              iconName: 'linkedin.svg',
-                              type: '',
-                              data: kDevLinkedin),
-                          socialMediaButton(
-                              iconName: 'facebook.svg',
-                              type: '',
-                              data: kDevFacebook),
-                          socialMediaButton(
-                              iconName: 'email.svg',
-                              type: 'mailto',
-                              data: kDevEmail),
-                        ],
-                      ),
                     ],
                   ),
                 )
@@ -141,28 +159,28 @@ class Footer extends StatelessWidget {
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
-                          TextButton(
+                          MaterialButton(
                             onPressed: () {},
                             child: const Text(
                               'About',
                               style: TextStyle(color: Colors.black87),
                             ),
                           ),
-                          TextButton(
+                          MaterialButton(
                             onPressed: () {},
                             child: const Text(
                               'Skills',
                               style: TextStyle(color: Colors.black87),
                             ),
                           ),
-                          TextButton(
+                          MaterialButton(
                             onPressed: () {},
                             child: const Text(
                               'Services',
                               style: TextStyle(color: Colors.black87),
                             ),
                           ),
-                          TextButton(
+                          MaterialButton(
                             onPressed: () {},
                             child: const Text(
                               'Portfolio',

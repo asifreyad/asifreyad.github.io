@@ -34,35 +34,40 @@ class BottomNavModalBottomSheet extends StatelessWidget {
         ),
 
         // bottom nav grid
-        GridView.count(
-          shrinkWrap: true,
-          crossAxisCount: 2,
-          mainAxisSpacing: 2,
-          crossAxisSpacing: 2,
-          childAspectRatio: 2.5,
-          physics: const NeverScrollableScrollPhysics(),
-          children: [
-            BottomNavButton(
-                newContext: context,
-                label: 'Home',
-                iconName: "home.svg",
-                itemKey: itemKeyHomeM),
-            BottomNavButton(
-                newContext: context,
-                label: 'About',
-                iconName: "user.svg",
-                itemKey: itemKeyAboutM),
-            BottomNavButton(
-                newContext: context,
-                label: 'Skills',
-                iconName: 'skills.svg',
-                itemKey: itemKeySkills),
-            BottomNavButton(
-                newContext: context,
-                label: 'Services',
-                iconName: "bag.svg",
-                itemKey: itemKeyServices),
-          ],
+        Expanded(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Row(
+                children: [
+                  BottomNavButton(
+                      newContext: context,
+                      label: 'Home',
+                      iconName: "home.svg",
+                      itemKey: itemKeyHomeM),
+                  BottomNavButton(
+                      newContext: context,
+                      label: 'About',
+                      iconName: "user.svg",
+                      itemKey: itemKeyAboutM),
+                ],
+              ),
+              Row(
+                children: [
+                  BottomNavButton(
+                      newContext: context,
+                      label: 'Skills',
+                      iconName: 'skills.svg',
+                      itemKey: itemKeySkills),
+                  BottomNavButton(
+                      newContext: context,
+                      label: 'Services',
+                      iconName: "bag.svg",
+                      itemKey: itemKeyServices),
+                ],
+              ),
+            ],
+          ),
         ),
 
         // close button

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:portfolio/responsive.dart';
+import 'package:portfolio/responsive/responsive.dart';
 import 'package:portfolio/widgets/svg_icon.dart';
 
 import '/widgets/headline.dart';
@@ -23,10 +23,13 @@ class SkillsPage extends StatelessWidget {
           const SizedBox(height: 50),
           GridView.count(
             shrinkWrap: true,
-            crossAxisCount: Responsive.isMobile(context) ? 1 : 2,
+            crossAxisCount:
+                Responsive.isMobile(context) || Responsive.isMobile(context)
+                    ? 1
+                    : 2,
             mainAxisSpacing: 20,
             crossAxisSpacing: 50,
-            childAspectRatio: Responsive.isMobile(context) ? 1.6 : 5 / 2,
+            // childAspectRatio: Responsive.isMobile(context)2.5,
             physics: const NeverScrollableScrollPhysics(),
             children: [
               // my fronted
